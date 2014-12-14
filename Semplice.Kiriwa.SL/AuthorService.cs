@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Highway.Data;
+﻿using Highway.Data;
 using Semplice.Kiriwa.Domains;
+using Semplice.Kiriwa.SL.Queries;
 
-namespace Semplice.Kiriwa.DAL
+namespace Semplice.Kiriwa.SL
 {
     public class AuthorService
     {
@@ -17,9 +13,14 @@ namespace Semplice.Kiriwa.DAL
             _repository = repository;
         }
 
-        public Author GetAllAuthors()
+        public Author GetAuthor(int id)
         {
-            _repository.Context.GetAll();
+            // TODO: 12.14.2014 - Remove this, just for test
+            var _results = _repository.Find(new Authors());
+
+            var _result = _repository.Find(new AuthorById(id));
+
+            return _result;
         }
     }
 }

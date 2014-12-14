@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Semplice.Kiriwa.DAL
+namespace Semplice.Kiriwa.SL.Tests
 {
     public class Class1
     {

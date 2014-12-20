@@ -10,9 +10,23 @@ namespace Semplice.Kiriwa.WebApp
         {
             #region Script
 
-            bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
-                        "~/Scripts/jquery-{version}.js"));
-            
+            //bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
+            //            "~/Scripts/jquery-{version}.js"));
+
+            bundles.Add(new ScriptBundle("~/bundles/angular")
+                .Include("~/Scripts/angular.js")
+                .Include("~/Scripts/angular-resource.js")
+                .Include("~/Scripts/angular-route.js")
+                .Include("~/Scripts/angular-cookies.js")
+                );
+
+            bundles.Add(new ScriptBundle("~/bundles/app")
+                .Include("~/app/js/app.js")
+                .Include("~/app/js/controllers/*Controller.js")
+                .Include("~/app/js/filters/*Filter.js")
+                .Include("~/app/js/services/*Service.js")
+                );
+
             #endregion
 
             #region Style

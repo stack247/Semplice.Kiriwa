@@ -11,10 +11,11 @@ namespace Semplice.Kiriwa.DAL.Entity
     public class KiriwaContext : DbContext
     {
         public KiriwaContext()
-            : base("Kiriwa.SqlServer")
+            : base("name=Kiriwa.SqlServer")
         {
         }
 
-        public DbSet<Author> Authors { get; set; }
+        public DbSet<Card> Cards { get; set; }
+        public DbSet<Stack> Stacks { get; set; }
     }
 }

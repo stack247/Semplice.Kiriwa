@@ -22,6 +22,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Semplice.Kiriwa.SL.Tests", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Semplice.Kiriwa.WebApp", "Semplice.Kiriwa.WebApp\Semplice.Kiriwa.WebApp.csproj", "{7F11BF44-B4CE-4546-AE17-5C77AE57DC18}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Semplice.Kiriwa.WebApp.Tests", "Semplice.Kiriwa.WebApp.Tests\Semplice.Kiriwa.WebApp.Tests.csproj", "{1CC1E95A-CFD6-407C-9B96-A37C8989FD36}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -52,6 +54,10 @@ Global
 		{7F11BF44-B4CE-4546-AE17-5C77AE57DC18}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7F11BF44-B4CE-4546-AE17-5C77AE57DC18}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7F11BF44-B4CE-4546-AE17-5C77AE57DC18}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1CC1E95A-CFD6-407C-9B96-A37C8989FD36}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1CC1E95A-CFD6-407C-9B96-A37C8989FD36}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1CC1E95A-CFD6-407C-9B96-A37C8989FD36}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1CC1E95A-CFD6-407C-9B96-A37C8989FD36}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

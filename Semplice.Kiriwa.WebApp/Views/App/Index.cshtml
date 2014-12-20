@@ -1,0 +1,9 @@
+﻿@using System.Configuration
+
+@section head{
+    <base href="@ConfigurationManager.AppSettings["BaseUrlPath"]" />
+}
+
+<div ng-app="kiriwaApp">
+    <ng-view></ng-view>
+</div>

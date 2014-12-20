@@ -13,10 +13,18 @@ namespace Semplice.Kiriwa.WebApp
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
+            // Handle AngularJS and ASP.Net MVC routes, to co-exist together.
+            // http://www.jlum.ws/post/2014/10/10/handling-routes-between-an-angularjs-application-and-aspnet-mvc-application
+            routes.MapRoute(
+                name: "AngularCatchAllRoute",
+                url: "App/{*.}",
+                defaults: new { controller = "App", action = "Index", id = UrlParameter.Optional }
+                );
+
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
+                defaults: new { controller = "App", action = "Index", id = UrlParameter.Optional }
             );
         }
     }

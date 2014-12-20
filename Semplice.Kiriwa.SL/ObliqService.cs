@@ -1,10 +1,11 @@
 ﻿using Highway.Data;
 using Semplice.Kiriwa.Domains;
+using Semplice.Kiriwa.SL.Contracts;
 using Semplice.Kiriwa.SL.Queries;
 
 namespace Semplice.Kiriwa.SL
 {
-    public class ObliqService
+    public class ObliqService : IObliqService
     {
         private readonly IRepository _repository;
 

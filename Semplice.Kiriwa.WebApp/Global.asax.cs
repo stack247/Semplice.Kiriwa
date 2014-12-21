@@ -6,6 +6,7 @@ using System.Web.Http;
 using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
+using Semplice.Kiriwa.WebApp.App_Start;
 
 namespace Semplice.Kiriwa.WebApp
 {
@@ -18,6 +19,8 @@ namespace Semplice.Kiriwa.WebApp
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
+
+            //UnityConfig.GetConfiguredContainer().resolve
         }
     }
 }

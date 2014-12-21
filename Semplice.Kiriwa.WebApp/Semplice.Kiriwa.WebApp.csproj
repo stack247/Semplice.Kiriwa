@@ -180,7 +180,6 @@
     <Compile Include="Areas\Probe\Controllers\ObliqController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\AppController.cs" />
-    <Compile Include="DataMappings\CardMap.cs" />
     <Compile Include="DataMappings\GettingStartedMappings.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>

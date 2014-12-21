@@ -13,10 +13,8 @@ namespace Semplice.Kiriwa.WebApp.DataMappings
         public void ConfigureModelBuilder(DbModelBuilder modelBuilder)
         {
             //Approach 1
-            modelBuilder.Entity<Card>().HasKey(x => x.CardId).ToTable("Cards");
-
-            //Approach 2
-            //modelBuilder.Configurations.Add(new CardMap());
+            modelBuilder.Entity<Card>(); //.HasKey(x => x.CardId).ToTable("Cards");
+            modelBuilder.Entity<Stack>(); //.HasKey(x => x.StackId).ToTable("Stacks");
         }
     }
 }

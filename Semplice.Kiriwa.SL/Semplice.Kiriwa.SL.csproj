@@ -60,7 +60,6 @@
     <Compile Include="Contracts\IObliqService.cs" />
     <Compile Include="ObliqService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Queries\Cards.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Semplice.Kiriwa.DAL\Semplice.Kiriwa.DAL.csproj">

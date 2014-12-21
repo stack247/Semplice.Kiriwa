@@ -1,7 +1,8 @@
-﻿using Highway.Data;
+﻿using System.Collections.Generic;
+using Highway.Data;
 using Semplice.Kiriwa.Domains;
 using Semplice.Kiriwa.SL.Contracts;
-using Semplice.Kiriwa.SL.Queries;
+using Semplice.Kiriwa.DAL.Queries;
 
 namespace Semplice.Kiriwa.SL
 {
@@ -14,12 +15,16 @@ namespace Semplice.Kiriwa.SL
             _repository = repository;
         }
 
-        public Card GetCard(int id)
+        public Stack GetStack(int id)
         {
-            // TODO: 12.14.2014 - Remove this, just for test
-            var _results = _repository.Find(new Cards());
+            var _result = _repository.Find(new StackById(id, true));
 
-            var _result = _repository.Find(new CardById(id));
+            return _result;
+        }
+
+        public IEnumerable<Stack> GetStacks()
+        {
+            var _result = _repository.Find(new Stacks());
 
             return _result;
         }

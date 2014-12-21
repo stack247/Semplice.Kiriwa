@@ -20,9 +20,10 @@ namespace Semplice.Kiriwa.WebApp.Areas.Probe.Controllers
         // GET: api/Obliq
         public IEnumerable<string> Get()
         {
-            var test = _ObliqService.GetCard(1);
+            var test = _ObliqService.GetStacks();
+            var test2 = _ObliqService.GetStack(1);
 
-            return new string[] { "value1", "value2", test.Text };
+            return new string[] { "value1", "value2", test2.Name, test2.Cards.FirstOrDefault().Text, test.FirstOrDefault().Name };
         }
 
         // GET: api/Obliq/5

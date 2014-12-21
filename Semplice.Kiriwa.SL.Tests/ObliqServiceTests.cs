@@ -22,33 +22,25 @@ namespace Semplice.Kiriwa.SL.Tests
             // InMemoryDataContext() doesn't seem to work. AuthorService can't find the Author in the repository.
             //var _context = new InMemoryDataContext();
             var _context = new Mock<IDataContext>();
-            _context.Setup(x => x.AsQueryable<Card>())
-                .Returns(new List<Card>
+            _context.Setup(x => x.AsQueryable<Stack>())
+                .Returns(new List<Stack>
                 {
-                    new Card
+                    new Stack
                     {
-                        CardId = 1,
-                        Title = "Brant",
-                        Text = "Meail"
-                    },
-                    new Card
-                    {
-                        CardId = 2,
-                        Title = "Lapat",
-                        Text = "Aheq"
+                        StackId = 1,
+                        Name = "Brant"
                     }
                 }.AsQueryable());
 
             var _service = new ObliqService(new Repository(_context.Object));
 
             // Act
-            var _result = _service.GetCard(1);
+            var _result = _service.GetStack(1);
 
             // Assert
             Assert.IsNotNull(_result);
-            Assert.AreEqual(1, _result.CardId);
-            Assert.AreEqual("Brant", _result.Title);
-            Assert.AreEqual("Meail", _result.Text);
+            Assert.AreEqual(1, _result.StackId);
+            Assert.AreEqual("Brant", _result.Name);
         }
     }
 }

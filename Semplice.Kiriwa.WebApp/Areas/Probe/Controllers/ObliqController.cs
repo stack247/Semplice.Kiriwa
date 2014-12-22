@@ -15,6 +15,8 @@ namespace Semplice.Kiriwa.WebApp.Areas.Probe.Controllers
             _ObliqService = obliqService;
         }
 
+        #region Stack
+
         // GET: api/Obliq/GetStacksWithCardCount
         public IEnumerable<StackWithCardCountDTO> GetStacksWithCardCount()
         {
@@ -31,6 +33,10 @@ namespace Semplice.Kiriwa.WebApp.Areas.Probe.Controllers
             return _result;
         }
 
+        #endregion
+
+        #region Card
+
         // GET: api/Obliq/GetCard/5
         public Card GetCard(int id)
         {
@@ -38,5 +44,7 @@ namespace Semplice.Kiriwa.WebApp.Areas.Probe.Controllers
 
             return _result;
         }
+
+        #endregion
     }
 }

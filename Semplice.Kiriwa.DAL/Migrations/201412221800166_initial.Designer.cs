@@ -13,7 +13,7 @@ namespace Semplice.Kiriwa.DAL.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "201412200235570_initial"; }
+            get { return "201412221800166_initial"; }
         }
         
         string IMigrationMetadata.Source

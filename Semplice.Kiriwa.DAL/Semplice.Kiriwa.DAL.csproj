@@ -67,9 +67,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Entity\KiriwaContext.cs" />
-    <Compile Include="Migrations\201412200235570_initial.cs" />
-    <Compile Include="Migrations\201412200235570_initial.Designer.cs">
-      <DependentUpon>201412200235570_initial.cs</DependentUpon>
+    <Compile Include="Migrations\201412221800166_initial.cs" />
+    <Compile Include="Migrations\201412221800166_initial.Designer.cs">
+      <DependentUpon>201412221800166_initial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201412221801325_Add_Created_Updated_in_Card_Stack.cs" />
+    <Compile Include="Migrations\201412221801325_Add_Created_Updated_in_Card_Stack.Designer.cs">
+      <DependentUpon>201412221801325_Add_Created_Updated_in_Card_Stack.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -87,8 +91,11 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201412200235570_initial.resx">
-      <DependentUpon>201412200235570_initial.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201412221800166_initial.resx">
+      <DependentUpon>201412221800166_initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201412221801325_Add_Created_Updated_in_Card_Stack.resx">
+      <DependentUpon>201412221801325_Add_Created_Updated_in_Card_Stack.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

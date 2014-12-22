@@ -24,6 +24,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Semplice.Kiriwa.WebApp", "S
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Semplice.Kiriwa.WebApp.Tests", "Semplice.Kiriwa.WebApp.Tests\Semplice.Kiriwa.WebApp.Tests.csproj", "{1CC1E95A-CFD6-407C-9B96-A37C8989FD36}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data", "Data", "{A0C104F9-FA1F-45DE-930C-136D1E907F9F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Service", "Service", "{644A02BC-A481-4F89-B0B4-AB8FC1694511}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "API", "API", "{756A4F96-3390-4274-80C4-D7D2DB900040}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

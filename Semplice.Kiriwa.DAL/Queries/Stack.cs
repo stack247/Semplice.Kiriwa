@@ -2,6 +2,7 @@
 using System.Linq;
 using Highway.Data;
 using Semplice.Kiriwa.Domains;
+using Semplice.Kiriwa.Domains.DTOs;
 
 namespace Semplice.Kiriwa.DAL.Queries
 {
@@ -21,11 +22,21 @@ namespace Semplice.Kiriwa.DAL.Queries
         }
     }
 
-    public class Stacks : Query<Stack>
+    public class StacksWithCardCount : Query<StackWithCardCountDTO>
     {
-        public Stacks()
+        public StacksWithCardCount()
         {
-            ContextQuery = c => c.AsQueryable<Stack>();
+            ContextQuery = c =>
+            {
+                var _stacks = (from s in c.AsQueryable<Stack>()
+                    select new StackWithCardCountDTO
+                    {
+                        Stacks = s,
+                        CardCount = s.Cards.Count
+                    });
+
+                return _stacks;
+            };
         }
     }
 }

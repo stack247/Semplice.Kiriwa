@@ -1,9 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Net.Http;
+﻿using System.Collections.Generic;
 using System.Web.Http;
+using Semplice.Kiriwa.Domains;
+using Semplice.Kiriwa.Domains.DTOs;
 using Semplice.Kiriwa.SL.Contracts;
 
 namespace Semplice.Kiriwa.WebApp.Areas.Probe.Controllers
@@ -17,34 +15,28 @@ namespace Semplice.Kiriwa.WebApp.Areas.Probe.Controllers
             _ObliqService = obliqService;
         }
 
-        // GET: api/Obliq
-        public IEnumerable<string> Get()
+        // GET: api/Obliq/GetStacksWithCardCount
+        public IEnumerable<StackWithCardCountDTO> GetStacksWithCardCount()
         {
-            var test = _ObliqService.GetStacks();
-            var test2 = _ObliqService.GetStack(1);
+            var _result = _ObliqService.GetStacksWithCardCount();
 
-            return new string[] { "value1", "value2", test2.Name, test2.Cards.FirstOrDefault().Text, test.FirstOrDefault().Name };
+            return _result;
         }
 
-        // GET: api/Obliq/5
-        public string Get(int id)
+        // GET: api/Obliq/GetStack/5
+        public Stack GetStack(int id)
         {
-            return "value";
+            var _result = _ObliqService.GetStack(id);
+
+            return _result;
         }
 
-        // POST: api/Obliq
-        public void Post([FromBody]string value)
+        // GET: api/Obliq/GetCard/5
+        public Card GetCard(int id)
         {
-        }
+            var _result = _ObliqService.GetCard(id);
 
-        // PUT: api/Obliq/5
-        public void Put(int id, [FromBody]string value)
-        {
-        }
-
-        // DELETE: api/Stack/5
-        public void Delete(int id)
-        {
+            return _result;
         }
     }
 }

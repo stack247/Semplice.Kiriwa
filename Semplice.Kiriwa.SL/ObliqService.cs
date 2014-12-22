@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using Highway.Data;
 using Semplice.Kiriwa.Domains;
+using Semplice.Kiriwa.Domains.DTOs;
 using Semplice.Kiriwa.SL.Contracts;
 using Semplice.Kiriwa.DAL.Queries;
 
@@ -15,6 +16,8 @@ namespace Semplice.Kiriwa.SL
             _repository = repository;
         }
 
+        #region Stack
+
         public Stack GetStack(int id)
         {
             var _result = _repository.Find(new StackById(id, true));
@@ -22,11 +25,24 @@ namespace Semplice.Kiriwa.SL
             return _result;
         }
 
-        public IEnumerable<Stack> GetStacks()
+        public IEnumerable<StackWithCardCountDTO> GetStacksWithCardCount()
         {
-            var _result = _repository.Find(new Stacks());
+            var _result = _repository.Find(new StacksWithCardCount());
 
             return _result;
         }
+
+        #endregion
+
+        #region Card
+
+        public Card GetCard(int id)
+        {
+            var _result = _repository.Find(new CardById(id));
+
+            return _result;
+        }
+
+        #endregion
     }
 }

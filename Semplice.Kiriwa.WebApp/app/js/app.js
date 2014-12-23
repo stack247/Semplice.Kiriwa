@@ -5,6 +5,16 @@
           //controller: "HomeController"
       });
 
+      $routeProvider.when("/Stacks", {
+          templateUrl: "../../app/templates/stacks.html",
+          controller: "StacksController"
+      });
+
+      $routeProvider.when("/Stack/:stackId", {
+          templateUrl: "../../app/templates/stack.html",
+          controller: "StackController"
+      });
+
       $routeProvider.otherwise({ redirectTo: "/Home" });
 
       $locationProvider.html5Mode(true);

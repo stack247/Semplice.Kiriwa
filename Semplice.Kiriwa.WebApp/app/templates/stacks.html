@@ -1,0 +1,7 @@
+﻿<div>
+    <div ng-repeat="stack in stacks" style="border: 1px solid black; width: 150px; margin-bottom: 30px;">
+        <a href="Stack/{{ stack.Stacks.StackId }}">{{ stack.Stacks.Name }}</a>
+        <br />
+        {{ stack.CardCount }} Cards
+    </div>
+</div>

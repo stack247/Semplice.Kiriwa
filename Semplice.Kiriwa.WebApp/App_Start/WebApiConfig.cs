@@ -19,6 +19,11 @@ namespace Semplice.Kiriwa.WebApp
                 routeTemplate: "api/{controller}/{action}/{id}",
                 defaults: new { id = RouteParameter.Optional }
             );
+
+            // Bug: fix for JSON serializing reference loop issue.
+            // http://stackoverflow.com/questions/7397207/json-net-error-self-referencing-loop-detected-for-type
+            config.Formatters.JsonFormatter.SerializerSettings.ReferenceLoopHandling
+                = Newtonsoft.Json.ReferenceLoopHandling.Ignore;
         }
     }
 }

@@ -15,7 +15,7 @@ namespace Semplice.Kiriwa.DAL.Queries
                 var _result = c.AsQueryable<Stack>();
 
                 if (includeChildren)
-                    _result.Include(x => x.Cards);
+                    _result = _result.Include(x => x.Cards);
 
                 return _result.FirstOrDefault(x => x.StackId == id);
             };

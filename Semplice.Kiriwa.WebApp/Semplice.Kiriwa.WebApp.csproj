@@ -164,9 +164,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="app\js\controllers\" />
     <Folder Include="app\js\filters\" />
-    <Folder Include="app\js\services\" />
     <Folder Include="Areas\Probe\Models\" />
     <Folder Include="Models\" />
   </ItemGroup>
@@ -188,6 +186,11 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="app\js\app.js" />
+    <Content Include="app\js\controllers\stacksController.js" />
+    <Content Include="app\js\controllers\stackController.js" />
+    <Content Include="app\js\services\obliqService.js" />
+    <Content Include="app\templates\stacks.html" />
+    <Content Include="app\templates\stack.html" />
     <Content Include="app\templates\home.html" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />

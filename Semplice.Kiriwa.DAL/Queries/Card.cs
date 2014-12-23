@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System.Data.Entity;
+using System.Linq;
 using Highway.Data;
 using Semplice.Kiriwa.Domains;
 
@@ -12,8 +13,8 @@ namespace Semplice.Kiriwa.DAL.Queries
             {
                 var _result = c.AsQueryable<Card>();
 
-                //if (includeChildren)
-                //    _result.Include(x => x);
+                if (includeChildren)
+                    _result = _result.Include(x => x.Stack);
 
                 return _result.FirstOrDefault(x => x.CardId == id);
             };

@@ -4,7 +4,13 @@
     <base href="@ConfigurationManager.AppSettings["BaseUrlPath"]" />
 }
 
-<div ng-app="kiriwaApp">
+<div ng-app="kiriwaApp" ng-cloak>
+    <div style="margin-bottom: 50px;">
+        <a href="Home">Home</a>
+        |
+        <a href="Stacks">Stacks</a>
+    </div>
+
     <ng-view></ng-view>
 </div>
 

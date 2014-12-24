@@ -70,6 +70,8 @@
   <ItemGroup>
     <Compile Include="ObliqServiceTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TestCommon\Helpers.cs" />
+    <Compile Include="TestCommon\Models.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

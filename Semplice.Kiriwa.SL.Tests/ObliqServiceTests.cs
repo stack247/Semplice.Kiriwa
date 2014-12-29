@@ -63,5 +63,39 @@ namespace Semplice.Kiriwa.SL.Tests
         }
 
         #endregion
+
+        #region GetCard
+
+        [TestCase]
+        public void GetCard_PassValidId_ShouldReturnResultAndIncludeChildren()
+        {
+            // Arrange
+            var _context = Helpers.GetMockIDataContext();
+            var _service = new ObliqService(new Repository(_context.Object));
+
+            // Act
+            var _result = _service.GetCard(2);
+
+            // Assert
+            Assert.IsNotNull(_result);
+            Assert.AreEqual(2, _result.CardId);
+            Assert.AreEqual("Unit Test Card 2 Title", _result.Title);
+        }
+
+        [TestCase]
+        public void GetCard_PassInvalidId_ShouldReturnNull()
+        {
+            // Arrange
+            var _context = Helpers.GetMockIDataContext();
+            var _service = new ObliqService(new Repository(_context.Object));
+
+            // Act
+            var _result = _service.GetCard(28482);
+
+            // Assert
+            Assert.IsNull(_result);
+        }
+
+        #endregion
     }
 }

@@ -1,11 +1,35 @@
 ﻿using System;
 using System.Collections.Generic;
 using Semplice.Kiriwa.Domains;
+using Semplice.Kiriwa.Domains.DTOs;
 
-namespace Semplice.Kiriwa.SL.Tests.TestCommon
+namespace Semplice.Kiriwa.WebApp.Tests.TestCommon
 {
     internal class Models
     {
+        internal static List<StackWithCardCountDTO> StackWithCardCountDTOs
+        {
+            get
+            {
+                return new List<StackWithCardCountDTO>
+                {
+                    StackWithCardCountDTO
+                };
+            }
+        }
+
+        internal static StackWithCardCountDTO StackWithCardCountDTO
+        {
+            get
+            {
+                return new StackWithCardCountDTO
+                {
+                    CardCount = 1,
+                    Stacks = Models.StackWithOneCard
+                };
+            }
+        }
+
         internal static Stack StackWithOneCard
         {
             get
@@ -26,20 +50,6 @@ namespace Semplice.Kiriwa.SL.Tests.TestCommon
                             Created = DateTime.Now
                         }
                     }
-                };
-            }
-        }
-
-        internal static Stack StackWithoutChildren
-        {
-            get
-            {
-                return new Stack
-                {
-                    StackId = 2,
-                    Name = "Unit Test Stack 2 Name",
-                    Created = DateTime.Now,
-                    Description = "Unit Test Stack 2 Description"
                 };
             }
         }

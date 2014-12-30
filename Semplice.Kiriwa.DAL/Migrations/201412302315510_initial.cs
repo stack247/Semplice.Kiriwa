@@ -12,9 +12,10 @@ namespace Semplice.Kiriwa.DAL.Migrations
                 c => new
                     {
                         CardId = c.Int(nullable: false, identity: true),
-                        Title = c.String(),
-                        Text = c.String(),
+                        FrontTitle = c.String(),
+                        FrontText = c.String(),
                         Created = c.DateTime(),
+                        Updated = c.DateTime(),
                         Stack_StackId = c.Int(),
                     })
                 .PrimaryKey(t => t.CardId)
@@ -28,6 +29,8 @@ namespace Semplice.Kiriwa.DAL.Migrations
                         StackId = c.Int(nullable: false, identity: true),
                         Name = c.String(),
                         Description = c.String(),
+                        Created = c.DateTime(),
+                        Updated = c.DateTime(),
                     })
                 .PrimaryKey(t => t.StackId);
             

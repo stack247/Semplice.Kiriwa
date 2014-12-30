@@ -79,7 +79,7 @@ namespace Semplice.Kiriwa.SL.Tests
             // Assert
             Assert.IsNotNull(_result);
             Assert.AreEqual(2, _result.CardId);
-            Assert.AreEqual("Unit Test Card 2 Title", _result.Title);
+            Assert.AreEqual("Unit Test Card 2 Title", _result.FrontTitle);
         }
 
         [TestCase]

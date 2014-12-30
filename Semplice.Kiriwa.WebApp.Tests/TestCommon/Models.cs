@@ -45,8 +45,8 @@ namespace Semplice.Kiriwa.WebApp.Tests.TestCommon
                         new Card
                         {
                             CardId = 1,
-                            Title = "Unit Test Card 1 Title",
-                            Text = "Unit Test Card 1 Text",
+                            FrontTitle = "Unit Test Card 1 Title",
+                            FrontText = "Unit Test Card 1 Text",
                             Created = DateTime.Now
                         }
                     }
@@ -62,8 +62,8 @@ namespace Semplice.Kiriwa.WebApp.Tests.TestCommon
                 {
                     CardId = 2,
                     Created = DateTime.Now,
-                    Text = "Unit Test Card 2 Text",
-                    Title = "Unit Test Card 2 Title"
+                    FrontText = "Unit Test Card 2 Text",
+                    FrontTitle = "Unit Test Card 2 Title"
                 };
             }
         }

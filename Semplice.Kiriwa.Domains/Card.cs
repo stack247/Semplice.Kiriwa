@@ -9,8 +9,8 @@ namespace Semplice.Kiriwa.Domains
     public class Card
     {
         public int CardId { get; set; }
-        public string Title { get; set; }
-        public string Text { get; set; }
+        public string FrontTitle { get; set; }
+        public string FrontText { get; set; }
         public DateTime? Created { get; set; }
         public DateTime? Updated { get; set; }
 

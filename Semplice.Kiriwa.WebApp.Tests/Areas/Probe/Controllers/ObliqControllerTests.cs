@@ -1,11 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Moq;
+﻿using System.Linq;
 using NUnit.Framework;
-using Semplice.Kiriwa.SL.Contracts;
 using Semplice.Kiriwa.WebApp.Areas.Probe.Controllers;
 using Semplice.Kiriwa.WebApp.Tests.TestCommon;
 
@@ -18,7 +12,7 @@ namespace Semplice.Kiriwa.WebApp.Tests.Areas.Probe.Controllers
         public void GetStacksWithCardCount_InvokeOperation_ResultIsNotNullAndChildrenHaveValues()
         {
             // Arrange
-            var _service = Helpers.GetMockIObliqService();
+            var _service = Helpers.GetMockIObliqService(Models.StackWithCardCountDTOs);
 
             // Act
             var _controller = new ObliqController(_service.Object);
@@ -35,7 +29,7 @@ namespace Semplice.Kiriwa.WebApp.Tests.Areas.Probe.Controllers
         public void GetStack_InvokeOperation_ResultIsNotNullAndIdMatchRequested()
         {
             // Arrange
-            var _service = Helpers.GetMockIObliqService();
+            var _service = Helpers.GetMockIObliqService(getStackReturn: Models.StackWithOneCard);
 
             // Act
             var _controller = new ObliqController(_service.Object);
@@ -50,7 +44,7 @@ namespace Semplice.Kiriwa.WebApp.Tests.Areas.Probe.Controllers
         public void GetCard_InvokeOperation_ResultIsNotNullAndIdMatchRequested()
         {
             // Arrange
-            var _service = Helpers.GetMockIObliqService();
+            var _service = Helpers.GetMockIObliqService(getCardReturn: Models.CardWithoutChildren);
 
             // Act
             var _controller = new ObliqController(_service.Object);

@@ -54,7 +54,7 @@ namespace Semplice.Kiriwa.DAL.Migrations
                 new Card { CardId = 6, FrontTitle = "", FrontText = "What is stopping you?", Stack = _stack1, Created = DateTime.Now },
                 new Card { CardId = 7, FrontTitle = "", FrontText = "What part is not yet clear?", Stack = _stack1, Created = DateTime.Now },
                 new Card { CardId = 8, FrontTitle = "", FrontText = "Whose opinion matters on this topic?", Stack = _stack1, Created = DateTime.Now },
-                new Card { CardId = 9, FrontTitle = "", FrontText = "Who wants you to scceed?", Stack = _stack1, Created = DateTime.Now },
+                new Card { CardId = 9, FrontTitle = "", FrontText = "Who wants you to succeed?", Stack = _stack1, Created = DateTime.Now },
                 new Card { CardId = 10, FrontTitle = "", FrontText = "What do you long for?", Stack = _stack1, Created = DateTime.Now },
                 new Card { CardId = 11, FrontTitle = "", FrontText = "What might help look like?", Stack = _stack1, Created = DateTime.Now },
                 new Card { CardId = 12, FrontTitle = "", FrontText = "How will you know when you have reached it?", Stack = _stack1, Created = DateTime.Now },

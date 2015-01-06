@@ -32,7 +32,7 @@ namespace Semplice.Kiriwa.DAL.Queries
                     select new StackWithCardCountDTO
                     {
                         Stacks = s,
-                        CardCount = s.Cards == null ? 0 : s.Cards.Count
+                        CardCount = s.Cards.Count
                     });
 
                 return _stacks;

@@ -18,6 +18,7 @@ namespace Semplice.Kiriwa.WebApp
                 .Include("~/Scripts/angular-resource.js")
                 .Include("~/Scripts/angular-route.js")
                 .Include("~/Scripts/angular-cookies.js")
+                .Include("~/Scripts/angular-animate.js")
                 );
 
             bundles.Add(new ScriptBundle("~/bundles/app")

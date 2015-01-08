@@ -1,21 +1,40 @@
-﻿<div data-ng-init="init()">
+﻿<style type="text/css">
+    #divCard {
+        border: 1px solid black;
+        width: 150px;
+        margin-bottom: 30px;
+    }
+
+    .fadein.ng-hide-remove,
+    .fadeout.ng-hide-add {
+        -webkit-transition: 400ms ease-in-out all;
+        -moz-transition: 400ms ease-in-out all;
+        -o-transition: 400ms ease-in-out all;
+        transition: 400ms ease-in-out all;
+        display: block !important;
+    }
+
+    .fadein.ng-hide-remove,
+    .fadeout.ng-hide-add.ng-hide-add-active {
+        opacity: 0;
+    }
+
+    .fadeout.ng-hide-add,
+    .fadein.ng-hide-remove.ng-hide-remove-active {
+        opacity: 1;
+    }
+</style>
+
+<div data-ng-init="init()">
     <button ng-click="changeRepeat()">Repeat</button>
     <button ng-click="changeShuffle()">Shuffle</button>
-    <button ng-click="changeSlideshow()">Slideshow</button>
     <button ng-click="changeState()">State</button>
 
     <div style="margin-bottom: 30px;">
         Repeat: {{ settings.repeat }} <br />
         Shuffle: {{ settings.shuffle }} <br />
-        Slideshow: {{ settings.slideshow }} <br />
         State: {{ settings.state }} <br />
     </div>
 
-    <div id="divCard" style="border: 1px solid black; width: 150px; margin-bottom: 30px;"></div>
-
-    <!--<div ng-repeat="card in cards" style="border: 1px solid black; width: 150px; margin-bottom: 30px;">
-        {{ card.FrontTitle }}
-        <br />
-        {{ card.FrontText }}
-    </div>-->
+    <div id="divCard" ng-show="settings.showCard" class="fadein fadeout"></div>
 </div>

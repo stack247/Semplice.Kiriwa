@@ -1,4 +1,4 @@
-﻿kiriwaApp.controller("StackController", ['$scope', '$routeParams', '$interval', 'ObliqService', function ($scope, $routeParams, $interval, ObliqService) {
+﻿kiriwaApp.controller("StackController", ['$scope', '$routeParams', '$interval', '$timeout', 'ObliqService', function ($scope, $routeParams, $interval, $timeout, ObliqService) {
     // LEARN: document.ready() in Angular JS
     // http://stackoverflow.com/questions/18646756/how-to-run-function-in-angular-controller-on-document-ready
     $scope.init = function () {
@@ -6,7 +6,7 @@
         // http://stackoverflow.com/questions/17181508/after-angular-js-http-request-call-complete-function-regardless-of-success-or
         ObliqService.GetStack(_stackId).then(function (data) {
             $scope.cards = data.Cards;
-        }).then(function() {
+        }).then(function () {
             _resetPlayingList();
             // LEARN: $interval use $apply internally, which will keep two way binding between model and view
             // http://www.sitepoint.com/understanding-angulars-apply-digest/
@@ -23,13 +23,12 @@
     $scope.settings = {
         repeat: false,
         shuffle: true,
-        // slideshow may not be necessary
-        slideshow: "auto",
-        slideshowDelay: 1500,
-        state: "play"
+        slideshowDelay: 3000,
+        state: "play",
+        showCard: false
     };
 
-    $scope.changeRepeat = function() {
+    $scope.changeRepeat = function () {
         if ($scope.settings.repeat) {
             $scope.settings.repeat = false;
             return;
@@ -44,14 +43,6 @@
         }
 
         $scope.settings.shuffle = true;
-    };
-    $scope.changeSlideshow = function () {
-        if ($scope.settings.slideshow == "auto") {
-            $scope.settings.slideshow = "manual";
-            return;
-        }
-
-        $scope.settings.slideshow = "auto";
     };
     $scope.changeState = function (state) {
         if (state == undefined)
@@ -68,7 +59,7 @@
         $scope.settings.state = "play";
     };
 
-    var _resetPlayingList = function() {
+    var _resetPlayingList = function () {
         if (_playing.length == 0) {
             _played = [];
             _playing = $scope.cards.slice(0);
@@ -89,8 +80,26 @@
         console.log("_playingNumber=" + _playingNumber);
         console.log("_playing[_playingNumber]=" + _playing[_playingNumber]);
         console.log("_playing=" + _playing);
-        
+
+        if ($scope.settings.showCard)
+            $scope.settings.showCard = false;
+
         $("#divCard").text(_playing[_playingNumber].FrontText);
+
+        // LEARN: Animate transition
+        // http://stackoverflow.com/questions/19607595/how-can-i-fade-in-and-then-fade-out-text-inside-a-div
+        
+        $timeout(function () {
+            if ($scope.settings.state == "play") {
+                $scope.settings.showCard = true;
+            };
+        }, 500);
+
+        $timeout(function () {
+            if ($scope.settings.state == "play") {
+                $scope.settings.showCard = false;
+            };
+        }, $scope.settings.slideshowDelay - 500);
 
         _played.push(_playing[_playingNumber]);
         _playing.splice(_playingNumber, 1);

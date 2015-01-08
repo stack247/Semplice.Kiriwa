@@ -1,4 +1,4 @@
-﻿var kiriwaApp = angular.module("kiriwaApp", ["ngResource", "ngRoute"])
+﻿var kiriwaApp = angular.module("kiriwaApp", ["ngResource", "ngRoute", "ngAnimate"])
   .config(['$routeProvider', '$locationProvider', function ($routeProvider, $locationProvider) {
       $routeProvider.when("/Home", {
           templateUrl: "../../app/templates/home.html"//,

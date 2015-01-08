@@ -2,24 +2,11 @@
     // LEARN: document.ready() in Angular JS
     // http://stackoverflow.com/questions/18646756/how-to-run-function-in-angular-controller-on-document-ready
     $scope.init = function () {
-        //console.log("Inside Init");
-        //console.log($scope.cards);
-        //$scope.changeSlideshow();
-
-        //setInterval(function () {
-        //    console.log($scope.settings.slideshow);
-        //    $scope.settings.slideshow = "manual";
-        //    console.log($scope.settings.slideshow);
-        //}, 5000);
-
         // LEARN: $http call complete
         // http://stackoverflow.com/questions/17181508/after-angular-js-http-request-call-complete-function-regardless-of-success-or
         ObliqService.GetStack(_stackId).then(function (data) {
-            //console.log(data);
-            //console.log(_stackId);
             $scope.cards = data.Cards;
         }).then(function() {
-            //console.log("complete");
             _resetPlayingList();
             // LEARN: $interval use $apply internally, which will keep two way binding between model and view
             // http://www.sitepoint.com/understanding-angulars-apply-digest/
@@ -61,17 +48,10 @@
     $scope.changeSlideshow = function () {
         if ($scope.settings.slideshow == "auto") {
             $scope.settings.slideshow = "manual";
-
-            console.log("---------- changeSlideshow() called");
-            console.log("---------- " + $scope.settings.slideshow);
-
             return;
         }
 
         $scope.settings.slideshow = "auto";
-
-        console.log("---------- changeSlideshow() called");
-        console.log("---------- " + $scope.settings.slideshow);
     };
     $scope.changeState = function (state) {
         if (state == undefined)
@@ -80,19 +60,12 @@
         if ($scope.settings.state == "play") {
             $interval.cancel(_slideshowInterval);
             $scope.settings.state = state;
-
-            //console.log("---------- changeState() called");
-            //console.log("---------- " + $scope.settings.state);
-
             return;
         }
 
         _resetPlayingList();
         _slideshowInterval = $interval(_slideshow, $scope.settings.slideshowDelay);
         $scope.settings.state = "play";
-
-        //console.log("---------- changeState() called");
-        //console.log("---------- " + $scope.settings.state);
     };
 
     var _resetPlayingList = function() {
@@ -124,8 +97,6 @@
 
         console.log("---------------");
 
-        //console.log("===========================================");
-
         if (_playing.length === 0) {
             ShowDebugging();
 
@@ -133,15 +104,9 @@
                 _resetPlayingList();
             }
             else {
-                //console.log("calling changeState()");
                 $scope.changeState("stop");
             }
-            
-            //console.log("$scope.settings");
-            //console.log($scope.settings);
         }
-
-        //console.log("===========================================");
     };
 
     function ShowDebugging() {
